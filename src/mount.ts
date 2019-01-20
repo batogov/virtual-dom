@@ -1,7 +1,7 @@
 import { RealDOMElem } from './render';
 
-const mount = ($node: RealDOMElem, $target: RealDOMElem | null): RealDOMElem | null => {
-    if ($target !== null) {
+const mount = ($node: RealDOMElem | null, $target: RealDOMElem | null): RealDOMElem | null => {
+    if ($node !== null && $target !== null) {
         // Ignore Internet Explorer and Safari
         $target.replaceWith($node);
         return $node;
