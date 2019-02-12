@@ -5,7 +5,13 @@ interface Options {
     children?: VirtualDOMElem[];
 }
 
-const createElement = (tagName: string, options: Options): VirtualDOMElem => {
+const createElement = (
+    tagName: string,
+    options: Options = {
+        attrs: {},
+        children: [],
+    }
+): VirtualDOMElem => {
     const vElem = Object.create(null);
 
     Object.assign(vElem, {
